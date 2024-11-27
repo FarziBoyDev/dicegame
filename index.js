@@ -6,8 +6,10 @@ var d2 = document.querySelector("#dice2");
 function gameprocess(){
     var name1 = prompt("Player 1 enter your name: ");
     p1.innerHTML = name1;
+    if(name1===""){name1="Player 1";}
     var name2 = prompt("Player 2 enter your name: ");
     p2.innerHTML = name2;
+    if(name2===""){name2="Player 2";}
 
     var num1 = Math.floor((Math.random()*6)+1);
     if(num1===1){
