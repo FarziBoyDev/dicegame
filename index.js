@@ -5,12 +5,12 @@ var d1 = document.querySelector("#dice1");
 var d2 = document.querySelector("#dice2");
 function gameprocess(){
     var name1 = prompt("Player 1 enter your name: ");
-    if(name1.length===0){p1.innerHTML="Player 1"; name1 = "Player 1";}
-    else{p1.innerHTML = name1;}
+    if(name1.length===0){name1 = "Player 1";}
+    p1.innerHTML = name1;
     
     var name2 = prompt("Player 2 enter your name: ");
-    if(name2.length===0){p2.innerHTML="Player 2"; name2 = "Player 2";}
-    else{p2.innerHTML = name2;}
+    if(name2.length===0){name2 = "Player 2";}
+    p2.innerHTML = name2;
     
 
     var num1 = Math.floor((Math.random()*6)+1);
@@ -52,9 +52,9 @@ function gameprocess(){
         d2.src = "./img/6.JPG";
     }
     if(num1>num2){
-        res.innerHTML=name1 + ", you won !!!";
+        res.innerHTML=name1+", you won !!!";
     }else if(num1<num2){
-        res.innerHTML=name2 + ", you won !!!";
+        res.innerHTML=name2+", you won !!!";
     }else{
         res.innerHTML="It's a draw. (Try again?)";
     }
