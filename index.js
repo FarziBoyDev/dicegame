@@ -50,11 +50,11 @@ function gameprocess(){
         d2.src = "./img/6.JPG";
     }
     if(num1>num2){
-        res.innerHTML=name1+", you won !!!";
+        res.innerHTML=p1.innerHTML + ", you won !!!";
     }else if(num1<num2){
-        res.innerHTML=name2+", you won !!!";
+        res.innerHTML=p2.innerHTML + ", you won !!!";
     }else{
-        res.innerHTML="Oops, it's a draw. (Try again?)";
+        res.innerHTML="It's a draw. (Try again?)";
     }
 
 }
