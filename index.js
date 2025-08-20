@@ -44,18 +44,18 @@ document.getElementById("area").addEventListener("click", function(){
     if(random1>random2)
     {
         p1Score++;
-        document.querySelector("h1").textContent="🚩 "+player1+" Wins!";
+        document.querySelector("h1").textContent=player1+" Wins!";
         document.getElementById("pl1").textContent=player1+"'s score is: "+p1Score;
     }
     else if(random1<random2)
     {
         p2Score++;
-        document.querySelector("h1").textContent=player2+" Wins! 🚩";
+        document.querySelector("h1").textContent=player2+" Wins!";
         document.getElementById("pl2").textContent=player2+"'s score is: "+p2Score;  
     }
     else
     {
-        document.querySelector("h1").textContent="🏳️ Draw! 🏳️";
+        document.querySelector("h1").textContent="🏳️Draw!";
     }
     if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
     else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
@@ -63,13 +63,13 @@ document.getElementById("area").addEventListener("click", function(){
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").textContent=player1+" won!!!!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").textContent=player2+" won!!!!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
@@ -102,18 +102,18 @@ function sim(){
     if(random1>random2)
     {
         p1Score++;
-        document.querySelector("h1").textContent="🚩 "+player1+" Wins!";
+        document.querySelector("h1").textContent=player1+" Wins!";
         document.getElementById("pl1").textContent=player1+"'s score is: "+p1Score;
     }
     else if(random1<random2)
     {
         p2Score++;
-        document.querySelector("h1").textContent=player2+" Wins! 🚩";
+        document.querySelector("h1").textContent=player2+" Wins!";
         document.getElementById("pl2").textContent=player2+"'s score is: "+p2Score;  
     }
     else
     {
-        document.querySelector("h1").textContent="🏳️ Draw! 🏳️";
+        document.querySelector("h1").textContent="🏳️Draw";
     }
     if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
     else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
@@ -122,13 +122,13 @@ function sim(){
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").textContent=player1+" won!!!!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").textContent=player2+" won!!!!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
