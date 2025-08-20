@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         void dice2.offsetWidth;
         dice1.classList.add("roll-effect");
         dice2.classList.add("roll-effect");
+
         if(random1>random2)
         {
             p1Score++;
@@ -61,20 +62,23 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             document.querySelector("h1").textContent="🏳️Draw!";
         }
+
         if(p1Score>p2Score){document.querySelector("h2").textContent="👈 "+player1+" is Winning!";}
         else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning! 👉";}
         else if(p1Score===p2Score){document.querySelector("h2").textContent="😲 Nobody is Winning 😲";}    
+
+        // Winner announcement (fixed)
         if(p1Score==checker)
         {
-        document.querySelector(".container").innerHTML="<h1></h1>";
-        document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
-        document.querySelector(".container h1").classList.add("zooming-effect");
+            let h1 = document.querySelector(".container h1");
+            h1.innerHTML = player1+"<br />is the winner!!!!";
+            h1.classList.add("zooming-effect");
         }
         if(p2Score==checker)
         {
-        document.querySelector(".container").innerHTML="<h1></h1>";
-        document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
-        document.querySelector(".container h1").classList.add("zooming-effect");
+            let h1 = document.querySelector(".container h1");
+            h1.innerHTML = player2+"<br />is the winner!!!!";
+            h1.classList.add("zooming-effect");
         }
     });
 
