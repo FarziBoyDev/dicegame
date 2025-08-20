@@ -57,19 +57,19 @@ document.getElementById("area").addEventListener("click", function(){
     {
         document.querySelector("h1").textContent="🏳️Draw!";
     }
-    if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
-    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
-    else if(p1Score===p2Score){document.querySelector("h2").textContent="Nobody is Winning 😲";}    
+    if(p1Score>p2Score){document.querySelector("h2").textContent="👈 "+player1+" is Winning!";}
+    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning! 👉";}
+    else if(p1Score===p2Score){document.querySelector("h2").textContent="😲 Nobody is Winning 😲";}    
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player1+"<br />is the Winner!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player2+"<br />is the Winner!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
@@ -115,21 +115,20 @@ function sim(){
     {
         document.querySelector("h1").textContent="🏳️Draw";
     }
-    if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
-    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
-    else if(p1Score===p2Score){document.querySelector("h2").textContent="Nobody is Winning 😲";}
+    if(p1Score>p2Score){document.querySelector("h2").textContent="👈 "+player1+" is Winning!";}
+    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning! 👉";}
+    else if(p1Score===p2Score){document.querySelector("h2").textContent="😲 Nobody is Winning 😲";}
 
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
-
