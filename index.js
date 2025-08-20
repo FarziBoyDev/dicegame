@@ -63,13 +63,13 @@ document.getElementById("area").addEventListener("click", function(){
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the Winner!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the Winner!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
@@ -122,13 +122,14 @@ function sim(){
     if(p1Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!!!!";
+    document.querySelector(".container h1").innerHTML=player1+"<br />is the winner!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
-    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!!!!";
+    document.querySelector(".container h1").innerHTML=player2+"<br />is the winner!";
     document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
+
