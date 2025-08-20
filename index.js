@@ -16,7 +16,7 @@ checker = Number(checker);
 document.getElementById("pl1").innerHTML=player1+"'s score is: "+p1Score;
 document.getElementById("pl2").innerHTML=player2+"'s score is: "+p2Score;
 sim();
-document.getElementById("myButton").addEventListener("click", function(){
+document.getElementById("area").addEventListener("click", function(){
     var number1 = Math.random()*6;
     var number2 = Math.random()*6;
     var random1 = Math.floor(number1) + 1;
@@ -33,6 +33,14 @@ document.getElementById("myButton").addEventListener("click", function(){
             document.querySelector(".img2").setAttribute("src","./images/dice"+x+".png")
             }
     }
+    let dice1 = document.querySelector(".img1");
+    let dice2 = document.querySelector(".img2");
+    dice1.classList.remove("roll-effect");
+    dice2.classList.remove("roll-effect");
+    void dice1.offsetWidth; // restart trick
+    void dice2.offsetWidth;
+    dice1.classList.add("roll-effect");
+    dice2.classList.add("roll-effect");
     if(random1>random2)
     {
         p1Score++;
@@ -56,11 +64,13 @@ document.getElementById("myButton").addEventListener("click", function(){
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
     document.querySelector(".container h1").textContent=player1+" won!!!!";
+    document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
     document.querySelector(".container h1").textContent=player2+" won!!!!";
+    document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
 );
@@ -81,6 +91,14 @@ function sim(){
             document.querySelector(".img2").setAttribute("src","./images/dice"+x+".png")
             }
     }
+    let dice1 = document.querySelector(".img1");
+    let dice2 = document.querySelector(".img2");
+    dice1.classList.remove("roll-effect");
+    dice2.classList.remove("roll-effect");
+    void dice1.offsetWidth; // restart trick
+    void dice2.offsetWidth;
+    dice1.classList.add("roll-effect");
+    dice2.classList.add("roll-effect");
     if(random1>random2)
     {
         p1Score++;
@@ -105,10 +123,12 @@ function sim(){
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
     document.querySelector(".container h1").textContent=player1+" won!!!!";
+    document.querySelector(".container h1").classList.add("zooming-effect");
     }
     if(p2Score==checker)
     {
     document.querySelector(".container").innerHTML="<h1></h1>";
     document.querySelector(".container h1").textContent=player2+" won!!!!";
+    document.querySelector(".container h1").classList.add("zooming-effect");
     }
 }
