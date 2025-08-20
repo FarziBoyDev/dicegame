@@ -1,63 +1,114 @@
-var res = document.querySelector("#result");
-var p1 = document.querySelector("#name1");
-var p2 = document.querySelector("#name2");
-var d1 = document.querySelector("#dice1");
-var d2 = document.querySelector("#dice2");
-function gameprocess(){
-    var name1 = prompt("Player 1 enter your name: ");
-    if(name1.length===0){name1 = "Player 1";}
-    p1.innerHTML = name1;
-    
-    var name2 = prompt("Player 2 enter your name: ");
-    if(name2.length===0){name2 = "Player 2";}
-    p2.innerHTML = name2;
-    
+var player1 = prompt("Player 1, Enter your Name:");
+player1 = player1.slice(0,1).toUpperCase()+player1.slice(1,player1.length);
+document.querySelector("#p1").textContent=player1;
+var player2 = prompt("Player 2, Enter your Name:");
+player2 = player2.slice(0,1).toUpperCase()+player2.slice(1,player2.length);
+document.querySelector("#p2").textContent=player2;
+var p1Score = 0;
+var p2Score = 0;
+let checker;
+do {
+  checker = prompt("Enter max score (numbers only):");
+} while (isNaN(checker) || checker.trim() === "" || Number(checker) <= 0);
 
-    var num1 = Math.floor((Math.random()*6)+1);
-    if(num1===1){
-        d1.src = "./img/1.JPG";
-    }
-    if(num1===2){
-        d1.src = "./img/2.JPG";
-    }
-    if(num1===3){
-        d1.src = "./img/3.JPG";
-    }
-    if(num1===4){
-        d1.src = "./img/4.JPG";
-    }
-    if(num1===5){
-        d1.src = "./img/5.JPG";
-    }
-    if(num1===6){
-        d1.src = "./img/6.JPG";
-    }
-    var num2 = Math.floor((Math.random()*6)+1);
-    if(num2===1){
-        d2.src = "./img/1.JPG";
-    }
-    if(num2===2){
-        d2.src = "./img/2.JPG";
-    }
-    if(num2===3){
-        d2.src = "./img/3.JPG";
-    }
-    if(num2===4){
-        d2.src = "./img/4.JPG";
-    }
-    if(num2===5){
-        d2.src = "./img/5.JPG";
-    }
-    if(num2===6){
-        d2.src = "./img/6.JPG";
-    }
-    if(num1>num2){
-        res.innerHTML=name1+", you won !!!";
-    }else if(num1<num2){
-        res.innerHTML=name2+", you won !!!";
-    }else{
-        res.innerHTML="It's a draw. (Try again?)";
-    }
+checker = Number(checker);
 
+document.getElementById("pl1").innerHTML=player1+"'s score is: "+p1Score;
+document.getElementById("pl2").innerHTML=player2+"'s score is: "+p2Score;
+sim();
+document.getElementById("myButton").addEventListener("click", function(){
+    var number1 = Math.random()*6;
+    var number2 = Math.random()*6;
+    var random1 = Math.floor(number1) + 1;
+    var random2 = Math.floor(number2) + 1;
+    document.querySelector("h3").textContent="Max point: "+checker;
+    for(var x = 1; x<=6; x++)
+    {
+        if(random1===x)
+            {
+            document.querySelector(".img1").setAttribute("src","./images/dice"+x+".png")
+            }
+        if(random2===x)
+            {
+            document.querySelector(".img2").setAttribute("src","./images/dice"+x+".png")
+            }
+    }
+    if(random1>random2)
+    {
+        p1Score++;
+        document.querySelector("h1").textContent="🚩 "+player1+" Wins!";
+        document.getElementById("pl1").textContent=player1+"'s score is: "+p1Score;
+    }
+    else if(random1<random2)
+    {
+        p2Score++;
+        document.querySelector("h1").textContent=player2+" Wins! 🚩";
+        document.getElementById("pl2").textContent=player2+"'s score is: "+p2Score;  
+    }
+    else
+    {
+        document.querySelector("h1").textContent="🏳️ Draw! 🏳️";
+    }
+    if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
+    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
+    else if(p1Score===p2Score){document.querySelector("h2").textContent="Nobody is Winning 😲";}    
+    if(p1Score==checker)
+    {
+    document.querySelector(".container").innerHTML="<h1></h1>";
+    document.querySelector(".container h1").textContent=player1+" won!!!!";
+    }
+    if(p2Score==checker)
+    {
+    document.querySelector(".container").innerHTML="<h1></h1>";
+    document.querySelector(".container h1").textContent=player2+" won!!!!";
+    }
 }
-// document.querySelector("#result").onclick=gameprocess();
+);
+function sim(){
+    var number1 = Math.random()*6;
+    var number2 = Math.random()*6;
+    var random1 = Math.floor(number1) + 1;
+    var random2 = Math.floor(number2) + 1;
+    document.querySelector("h3").textContent="Max point: "+checker;
+    for(var x = 1; x<=6; x++)
+    {
+        if(random1===x)
+            {
+            document.querySelector(".img1").setAttribute("src","./images/dice"+x+".png")
+            }
+        if(random2===x)
+            {
+            document.querySelector(".img2").setAttribute("src","./images/dice"+x+".png")
+            }
+    }
+    if(random1>random2)
+    {
+        p1Score++;
+        document.querySelector("h1").textContent="🚩 "+player1+" Wins!";
+        document.getElementById("pl1").textContent=player1+"'s score is: "+p1Score;
+    }
+    else if(random1<random2)
+    {
+        p2Score++;
+        document.querySelector("h1").textContent=player2+" Wins! 🚩";
+        document.getElementById("pl2").textContent=player2+"'s score is: "+p2Score;  
+    }
+    else
+    {
+        document.querySelector("h1").textContent="🏳️ Draw! 🏳️";
+    }
+    if(p1Score>p2Score){document.querySelector("h2").textContent=player1+" is Winning!";}
+    else if(p1Score<p2Score){document.querySelector("h2").textContent=player2+" is Winning!";}
+    else if(p1Score===p2Score){document.querySelector("h2").textContent="Nobody is Winning 😲";}
+
+    if(p1Score==checker)
+    {
+    document.querySelector(".container").innerHTML="<h1></h1>";
+    document.querySelector(".container h1").textContent=player1+" won!!!!";
+    }
+    if(p2Score==checker)
+    {
+    document.querySelector(".container").innerHTML="<h1></h1>";
+    document.querySelector(".container h1").textContent=player2+" won!!!!";
+    }
+}
